@@ -1,14 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Serilog;
 
 namespace ProyectoConsolaB
 {
     public class PruebaLog
     {
-        private readonly ILogger _logger;
 
         public void Convertir_Int_String()
         {
@@ -36,7 +34,8 @@ namespace ProyectoConsolaB
             catch (Exception e)
             {
                 //Console.WriteLine(e.Message);
-                _logger.Log(LogLevel.Error, e.Message);
+                //_logger.Log(LogLevel.Error, e.Message);
+                Log.Information("Se produjo un error");
             }
             finally
             {
