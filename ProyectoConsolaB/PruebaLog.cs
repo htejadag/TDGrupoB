@@ -22,20 +22,21 @@ namespace ProyectoConsolaB
         {
             try
             {
-                string a = "20000";
+                Log.Information("Se va a iniciar la operación");
+                string a = "40000";
                 Int16 b;
 
                 b = Int16.Parse(a);
 
                 Console.WriteLine("El valor es : " + b);
 
-                
+                Log.Information("Se finalizó la operación");
             }
             catch (Exception e)
             {
                 //Console.WriteLine(e.Message);
                 //_logger.Log(LogLevel.Error, e.Message);
-                Log.Information("Se produjo un error");
+                Log.Information("Se produjo un error en la conversión");
             }
             finally
             {

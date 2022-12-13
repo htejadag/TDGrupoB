@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using Serilog;
 using System;
+using Serilog.Sinks.SystemConsole.Themes;
 
 namespace ProyectoConsolaB
 {
@@ -7,6 +9,11 @@ namespace ProyectoConsolaB
     {
         static void Main(string[] args)
         {
+            // Creación del log
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File("log.txt")
+                .CreateLogger();
+
             //Console.WriteLine("Hello World!");
 
             PruebaLog objPruebaLog = new PruebaLog();
@@ -14,21 +21,7 @@ namespace ProyectoConsolaB
 
             // Implementar Log del request
             objPruebaLog.Convertir_String_Int();
-            // Implementar Log del response
-
-
-            //using var loggerFactory = LoggerFactory.Create(builder =>
-            //{
-            //    builder
-            //        .AddFilter("Microsoft", LogLevel.Warning)
-            //        .AddFilter("System", LogLevel.Warning)
-            //        .AddFilter("LoggingConsoleApp.Program", LogLevel.Debug)
-            //        .AddConsole();
-            //});
-
-            //ILogger logger = loggerFactory.CreateLogger<Program>();
-            //logger.LogInformation("Example log message");
-
+            // Implementar Log del response            
         }
 
     }
