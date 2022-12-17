@@ -13,20 +13,20 @@ namespace ProyectoConsolaB
                 .CreateLogger();
 
             Conversion objConversion = new Conversion();
-            string valorPrueba;
+            string valor;
 
 
-            valorPrueba = null;
-            Log.Information("valorPrueba : "+valorPrueba);
-            int valorDevuelto1 = objConversion.Convertir_a_Entero(valorPrueba);
+            valor = null;
+            Log.Information("valor : " + valor);
+            int valorDevuelto1 = objConversion.Convertir_a_Entero(valor);
 
-            valorPrueba = "aaa";
-            Log.Information("valorPrueba : " + valorPrueba);
-            int valorDevuelto2 = objConversion.Convertir_a_Entero(valorPrueba);
+            valor = "aaa";
+            Log.Information("valor : " + valor);
+            int valorDevuelto2 = objConversion.Convertir_a_Entero(valor);
 
-            valorPrueba = "40000";
-            Log.Information("valorPrueba : " + valorPrueba);
-            int valorDevuelto3 = objConversion.Convertir_a_Entero(valorPrueba);
+            valor = "40000";
+            Log.Information("valor : " + valor);
+            int valorDevuelto3 = objConversion.Convertir_a_Entero(valor);
 
             //PruebaLog objPruebaLog = new PruebaLog();
 
