@@ -1,27 +1,38 @@
-﻿using Microsoft.Extensions.Logging;
-using Serilog;
+﻿using Serilog;
 using System;
-using Serilog.Sinks.SystemConsole.Themes;
 
 namespace ProyectoConsolaB
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            // Creación del log
+        {           
+            // Creación del log            
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File("log.txt")
                 .CreateLogger();
 
-            //Console.WriteLine("Hello World!");
+            Conversion objConversion = new Conversion();
+            string valorPrueba;
 
-            PruebaLog objPruebaLog = new PruebaLog();
-            //objPruebaLog.Convertir_Int_String();
 
-            // Implementar Log del request
-            objPruebaLog.Convertir_String_Int();
-            // Implementar Log del response            
+            valorPrueba = null;
+            Log.Information("valorPrueba : "+valorPrueba);
+            int valorDevuelto1 = objConversion.Convertir_a_Entero(valorPrueba);
+
+            valorPrueba = "aaa";
+            Log.Information("valorPrueba : " + valorPrueba);
+            int valorDevuelto2 = objConversion.Convertir_a_Entero(valorPrueba);
+
+            valorPrueba = "40000";
+            Log.Information("valorPrueba : " + valorPrueba);
+            int valorDevuelto3 = objConversion.Convertir_a_Entero(valorPrueba);
+
+            //PruebaLog objPruebaLog = new PruebaLog();
+            
+            //// Implementar Log del request
+            //objPruebaLog.Convertir_String_Int();
+            //// Implementar Log del response
         }
 
     }
