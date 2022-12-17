@@ -29,11 +29,15 @@ namespace ProyectoConsolaB
             int valorDevuelto3 = objConversion.Convertir_a_Entero(valorPrueba);
 
             //PruebaLog objPruebaLog = new PruebaLog();
-            
+
             //// Implementar Log del request
             //objPruebaLog.Convertir_String_Int();
             //// Implementar Log del response
+            Saludar();
         }
 
+        public static void Saludar() {
+            Console.WriteLine("Hola");
+        }
     }
 }
