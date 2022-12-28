@@ -35,7 +35,7 @@ namespace ProyectoConsolaB
             //// Implementar Log del response
             //Saludar();
 
-            Pregunta1();
+            Pregunta5();
         }
 
         public static void Saludar()
@@ -47,9 +47,9 @@ namespace ProyectoConsolaB
         {
             try
             {
-                Int32 a;
+                Int16 a;
                 String b = "40000";
-                a = Int32.Parse(b);
+                a = Int16.Parse(b);
                 Console.WriteLine("El número es " + a);
             }
             catch (Exception e)
