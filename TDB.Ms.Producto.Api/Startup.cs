@@ -24,7 +24,9 @@ namespace TDB.Ms.Producto.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(); 
+            //services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +35,8 @@ namespace TDB.Ms.Producto.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseRouting();

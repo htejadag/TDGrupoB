@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace TDB.Ms.Producto.Api.Controllers
 {
     [ApiController]
-    [Route("{controller}")]
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,7 +23,7 @@ namespace TDB.Ms.Producto.Api.Controllers
         //    _logger = logger;
         //}
 
-        [HttpGet]
+        [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
