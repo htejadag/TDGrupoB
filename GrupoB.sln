@@ -37,8 +37,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MS", "MS", "{4819275C-1F48-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDB.Ms.Producto.Api", "TDB.Ms.Producto.Api\TDB.Ms.Producto.Api.csproj", "{DFC7AAF0-7A5B-4DAD-BC34-3C84833F6B4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{5A6E6F10-8E81-440F-A57C-AC87B2B42A90}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,10 +67,6 @@ Global
 		{DFC7AAF0-7A5B-4DAD-BC34-3C84833F6B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC7AAF0-7A5B-4DAD-BC34-3C84833F6B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC7AAF0-7A5B-4DAD-BC34-3C84833F6B4C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A6E6F10-8E81-440F-A57C-AC87B2B42A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A6E6F10-8E81-440F-A57C-AC87B2B42A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A6E6F10-8E81-440F-A57C-AC87B2B42A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A6E6F10-8E81-440F-A57C-AC87B2B42A90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,7 +84,6 @@ Global
 		{5C447BFC-6642-4645-9A4C-A316D3653D19} = {9C72DEFD-2307-4443-912B-DB4FAB8F30AA}
 		{4819275C-1F48-4888-90E9-C64890E8AE3C} = {C1EE6B29-BD44-43C1-9C6D-884F443A5549}
 		{DFC7AAF0-7A5B-4DAD-BC34-3C84833F6B4C} = {4819275C-1F48-4888-90E9-C64890E8AE3C}
-		{5A6E6F10-8E81-440F-A57C-AC87B2B42A90} = {ADA9F5FA-AABE-4A26-9D44-34E4A58DF0BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9704D7A-3F1B-4A03-AE09-E42262D1F8B1}
