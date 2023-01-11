@@ -9,7 +9,7 @@ namespace TDB.Ms.Producto.Api.Controllers
     [Route("[controller]")]
     public class ProductoController : ControllerBase
     {
-        private static readonly List<Producto> listaProducto = new List<Producto>
+        private static List<Producto> listaProducto = new List<Producto>
         {
             new Producto
             {
@@ -60,6 +60,23 @@ namespace TDB.Ms.Producto.Api.Controllers
             producto.IdProducto = listaProducto.Count() + 1;
             listaProducto.Add(producto);
             return CreatedAtAction("CrearProducto", producto);
+        }
+
+        [HttpPut(Name = "ModificarProducto")]
+        public ActionResult<Producto> ModificarProducto(Producto producto)
+        {
+            Producto productoModificado = listaProducto.Single(x => x.IdProducto == producto.IdProducto);
+            productoModificado.Nombre = producto.Nombre;
+            productoModificado.Cantidad = producto.Cantidad;
+            productoModificado.Precio= producto.Precio;
+            return CreatedAtAction("ModificarProducto", productoModificado);
+        }
+
+        [HttpDelete(Name = "EliminarProducto")]
+        public ActionResult<Producto> EliminarProducto(int id)
+        {
+            listaProducto.RemoveAt(id);
+            return Ok(id);
         }
     }
 }
