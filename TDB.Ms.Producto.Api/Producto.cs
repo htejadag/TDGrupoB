@@ -4,7 +4,7 @@ namespace TDB.Ms.Producto.Api
 {
     public class Producto
     {
-        public Guid IdProducto { get; set; }
+        public int IdProducto { get; set; }
 
         public string Nombre { get; set; }
 
