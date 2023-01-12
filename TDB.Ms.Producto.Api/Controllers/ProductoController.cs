@@ -6,7 +6,7 @@ using System.Linq;
 namespace TDB.Ms.Producto.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("productos")]
     public class ProductoController : ControllerBase
     {
         private static List<Producto> listaProducto = new List<Producto>
@@ -29,29 +29,16 @@ namespace TDB.Ms.Producto.Api.Controllers
         };
 
 
-        [HttpGet(Name = "GetProducto")]
-        public IEnumerable<Producto> Get()
+        //[HttpGet(Name = "ListarProductos")]
+        //public IEnumerable<Producto> ListarProductos()
+        //{           
+        //    return listaProducto;
+        //}
+
+        [HttpGet(Name = "BuscarProducto")]
+        public Producto BuscarProducto(int id)
         {
-            //List<Producto> listaProducto = new List<Producto>
-            //{
-            //    new Producto
-            //    {
-            //        IdProducto = new Guid(),
-            //        Nombre = "Arroz",
-            //        Cantidad = 100,
-            //        Precio = 5.5M
-            //    },
-
-            //    new Producto
-            //    {
-            //        IdProducto = new Guid(),
-            //        Nombre = "Leche",
-            //        Cantidad = 80,
-            //        Precio = 4.4M
-            //    }
-            //};
-
-            return listaProducto;
+            return listaProducto.Single(x => x.IdProducto == id);
         }
 
         [HttpPost(Name = "CrearProducto")]
