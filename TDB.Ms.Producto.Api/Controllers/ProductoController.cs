@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,8 +45,12 @@ namespace TDB.Ms.Producto.Api.Controllers
         [HttpPost(Name = "CrearProducto")]
         public ActionResult<Producto> CrearProducto(Producto producto)
         {
-            producto.IdProducto = listaProducto.Count() + 1;
-            listaProducto.Add(producto);
+            var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("TDC_productos");
+            var dbProducto = database.GetCollection<Producto>("producto");
+            dbProducto.InsertOneAsync(producto);
+            //producto.IdProducto = listaProducto.Count() + 1;
+            //listaProducto.Add(producto);
             return CreatedAtAction("CrearProducto", producto);
         }
 
