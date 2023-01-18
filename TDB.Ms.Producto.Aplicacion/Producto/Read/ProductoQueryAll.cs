@@ -2,26 +2,28 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
-using TDB.Ms.Producto.Infraestructura;
+using TDB.Ms.Producto.Infraestructura.DBRepository;
+using TDB.Ms.Producto.Infraestructura.DBSettings;
 using dominio = TDB.Ms.Producto.Dominio.Entidades;
 
-namespace TDB.Ms.Producto.Aplicacion.Read
+namespace TDB.Ms.Producto.Aplicacion.Producto.Read
 {
     public class ProductoQueryAll
     {
         internal DBRepository _repository = new DBRepository();
-        private IMongoCollection<dominio.Producto> Collection;
+        private IMongoCollection<dominio.Producto> _producto;
 
         public ProductoQueryAll()
         {
-            Collection = _repository.db.GetCollection<dominio.Producto>("producto");
+            _producto = _repository.db.GetCollection<dominio.Producto>("producto");
         }
 
         public IEnumerable<dominio.Producto> ListarProductos()
         {
-            return Collection.Find(x => true).ToList();
+            return _producto.Find(x => true).ToList();
         }
     }
 }
