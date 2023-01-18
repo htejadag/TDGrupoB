@@ -6,7 +6,7 @@
         public const string Version = "v1";
         public const string Base = Root + "/" + Version;
 
-        public static class Producto
+        public static class RouteProducto
         {
             // Read
             public const string GetAll = Base + "/producto/all";
@@ -16,6 +16,7 @@
             public const string Create = Base + "/producto/create";
             public const string Update = Base + "/producto/update";
             public const string Delete = Base + "/producto/delete";
+
         }
     }
 }

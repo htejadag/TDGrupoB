@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TDB.Ms.Producto.Api.Routes;
 using TDB.Ms.Producto.Aplicacion.Producto.Read;
+using TDB.Ms.Producto.Dominio.Servicios;
 using static TDB.Ms.Producto.Api.Routes.ApiRoutes;
 using dominio = TDB.Ms.Producto.Dominio.Entidades;
 
@@ -16,21 +17,22 @@ namespace TDB.Ms.Producto.Api.Controllers
     {
         private ProductoQueryAll db = new ProductoQueryAll();
 
-        [HttpGet(ApiRoutes.Producto.GetAll)]
+        [HttpGet(RouteProducto.GetAll)]
         public IEnumerable<dominio.Producto> ListarProductos()
         {
-            #region Conexión a base de datos
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("TDB_productos");
-            var collection = database.GetCollection<dominio.Producto>("producto");
-            #endregion
+            //#region Conexión a base de datos
+            //var client = new MongoClient("mongodb://localhost:27017");
+            //var database = client.GetDatabase("TDB_productos");
+            //var collection = database.GetCollection<dominio.Producto>("producto");
+            //#endregion
 
-            var listaProducto = collection.Find(x => true).ToList();
-            //var listaProducto = db.ListarProductos();
+            //var listaProducto = collection.Find(x => true).ToList();
+
+            var listaProducto = db.ListarProductos();
             return listaProducto;
         }
 
-        [HttpGet(ApiRoutes.Producto.GetById)]
+        [HttpGet(RouteProducto.GetById)]
         public dominio.Producto BuscarProducto(int id)
         {
             #region Conexión a base de datos
@@ -44,7 +46,7 @@ namespace TDB.Ms.Producto.Api.Controllers
             return objProducto;
         }
 
-        [HttpPost(ApiRoutes.Producto.Create)]
+        [HttpPost(RouteProducto.Create)]
         public ActionResult<dominio.Producto> CrearProducto(dominio.Producto producto)
         {
             #region Conexión a base de datos
@@ -60,7 +62,7 @@ namespace TDB.Ms.Producto.Api.Controllers
             return Ok();
         }
 
-        [HttpPut(ApiRoutes.Producto.Update)]
+        [HttpPut(RouteProducto.Update)]
         public ActionResult<dominio.Producto> ModificarProducto(dominio.Producto producto)
         {
             #region Conexión a base de datos
@@ -86,7 +88,7 @@ namespace TDB.Ms.Producto.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete(ApiRoutes.Producto.Delete)]
+        [HttpDelete(RouteProducto.Delete)]
         public ActionResult<dominio.Producto> EliminarProducto(int id)
         {
             #region Conexión a base de datos
