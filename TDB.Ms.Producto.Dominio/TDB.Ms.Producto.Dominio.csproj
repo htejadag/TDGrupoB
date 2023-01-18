@@ -11,4 +11,12 @@
     <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositorios\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TDB.Ms.Producto.Infraestructura\TDB.Ms.Producto.Infraestructura.csproj" />
+  </ItemGroup>
+
 </Project>
