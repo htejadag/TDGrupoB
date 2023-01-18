@@ -5,10 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TDB.Ms.Producto.Infraestructura.DBSettings;
 
 namespace TDB.Ms.Producto.Api
 {
@@ -27,6 +29,10 @@ namespace TDB.Ms.Producto.Api
             services.AddControllers(); 
             //services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            
+            // Conexión a Base de Datos
+            services.Configure<DBSettings>(Configuration.GetSection("DBSettings"));
+            services.AddSingleton<IDBSettings>(x => x.GetRequiredService<IOptions<DBSettings>>().Value);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
