@@ -1,12 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Producto.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TDB.Ms.Producto.Aplicacion\TDB.Ms.Producto.Aplicacion.csproj" />
+    <ProjectReference Include="..\TDB.Ms.Producto.Dominio\TDB.Ms.Producto.Dominio.csproj" />
+    <ProjectReference Include="..\TDB.Ms.Producto.Infraestructura\TDB.Ms.Producto.Infraestructura.csproj" />
   </ItemGroup>
 
 
