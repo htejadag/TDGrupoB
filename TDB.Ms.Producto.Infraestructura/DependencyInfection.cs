@@ -17,11 +17,11 @@ namespace TDB.Ms.Producto.Infraestructura
             //BsonSerializer.RegisterSerializer(typeof(DateTime), new BsonUtcDateTimeSerializer());
 
             // Base de Datos MongoDb
-            var databaseSettings = new DBSettings();
-            configuration.Bind(nameof(DBSettings), databaseSettings);
-            services.AddScoped<IMongoDbContext>(x => new MongoDbContext(databaseSettings.Server, databaseSettings.Database));
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<ICollectionContext, CollectionContext>();
+            //var databaseSettings = new DBSettings();
+            //configuration.Bind(nameof(DBSettings), databaseSettings);
+            //services.AddScoped<IMongoDbContext>(x => new MongoDbContext(databaseSettings.Server, databaseSettings.Database));
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped<ICollectionContext, CollectionContext>();
             
             return services;
         }

@@ -10,12 +10,19 @@
     <Compile Remove="Common\**" />
     <Compile Remove="Context\**" />
     <Compile Remove="DBRepository\**" />
+    <Compile Remove="DBSettings\**" />
     <EmbeddedResource Remove="Common\**" />
     <EmbeddedResource Remove="Context\**" />
     <EmbeddedResource Remove="DBRepository\**" />
+    <EmbeddedResource Remove="DBSettings\**" />
     <None Remove="Common\**" />
     <None Remove="Context\**" />
     <None Remove="DBRepository\**" />
+    <None Remove="DBSettings\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DependencyInfection.cs" />
   </ItemGroup>
 
   <ItemGroup>

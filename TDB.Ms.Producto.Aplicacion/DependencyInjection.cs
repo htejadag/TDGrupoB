@@ -15,7 +15,7 @@ namespace TDB.Ms.Producto.Aplicacion
         {
             #region Mongo
 
-            string cs = configuration.GetSection("DBSettings:MONGO_CONEXION").Value;
+            string cs = configuration.GetSection("DBSettings:ConnectionString").Value;
             var dbUrl = new MongoUrl(cs);
 
             services.AddScoped<IDbContext>(x => new DbContext(dbUrl));
