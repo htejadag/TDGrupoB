@@ -7,12 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+    <Compile Remove="Repositorios\**" />
+    <Compile Remove="Servicios\**" />
+    <EmbeddedResource Remove="Repositorios\**" />
+    <EmbeddedResource Remove="Servicios\**" />
+    <None Remove="Repositorios\**" />
+    <None Remove="Servicios\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositorios\" />
+    <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
   </ItemGroup>
 
   <ItemGroup>

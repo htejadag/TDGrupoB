@@ -5,13 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDB.Ms.Producto.Infraestructura.Common;
 
 namespace TDB.Ms.Producto.Dominio.Entidades
 {
-    public class Categorias
+    public class Categoria : Base
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string _id { get; set; } 
+        public string nombre { get; set; }
     }
 }
