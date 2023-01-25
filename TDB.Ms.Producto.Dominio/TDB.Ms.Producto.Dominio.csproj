@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\**" />
     <Compile Remove="Repositorios\**" />
+    <Compile Remove="Servicios\**" />
+    <EmbeddedResource Remove="Common\**" />
     <EmbeddedResource Remove="Repositorios\**" />
+    <EmbeddedResource Remove="Servicios\**" />
+    <None Remove="Common\**" />
     <None Remove="Repositorios\**" />
+    <None Remove="Servicios\**" />
   </ItemGroup>
 
   <ItemGroup>

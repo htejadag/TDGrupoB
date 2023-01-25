@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TDB.Ms.Producto.Infraestructura.Context;
+//using TDB.Ms.Producto.Infraestructura.Context;
 
 namespace TDB.Ms.Producto.Infraestructura
 {
@@ -14,7 +14,7 @@ namespace TDB.Ms.Producto.Infraestructura
     {
         public static IServiceCollection AddInfraestructura(this IServiceCollection services, IConfiguration configuration)
         {
-            BsonSerializer.RegisterSerializer(typeof(DateTime), new BsonUtcDateTimeSerializer());
+            //BsonSerializer.RegisterSerializer(typeof(DateTime), new BsonUtcDateTimeSerializer());
 
             // Base de Datos MongoDb
             var databaseSettings = new DBSettings();

@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\**" />
+    <Compile Remove="Context\**" />
     <Compile Remove="DBRepository\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="Context\**" />
     <EmbeddedResource Remove="DBRepository\**" />
+    <None Remove="Common\**" />
+    <None Remove="Context\**" />
     <None Remove="DBRepository\**" />
   </ItemGroup>
 
