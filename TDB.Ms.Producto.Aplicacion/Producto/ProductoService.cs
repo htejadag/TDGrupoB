@@ -11,7 +11,8 @@ namespace TDB.Ms.Producto.Aplicacion.Producto
         private readonly ICollectionContext<dominio.Producto> _producto;
         private readonly IBaseRepository<dominio.Producto> _productoR;
 
-        public ProductoService(ICollectionContext<dominio.Producto> producto, IBaseRepository<dominio.Producto> productoR)
+        public ProductoService(ICollectionContext<dominio.Producto> producto, 
+                                IBaseRepository<dominio.Producto> productoR)
         {
             _producto = producto;
             _productoR = productoR;

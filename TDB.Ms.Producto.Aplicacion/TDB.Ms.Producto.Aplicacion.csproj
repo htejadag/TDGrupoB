@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Categoria\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TDB.Ms.Producto.Dominio\TDB.Ms.Producto.Dominio.csproj" />
     <ProjectReference Include="..\TDB.Ms.Producto.Infraestructura\TDB.Ms.Producto.Infraestructura.csproj" />
   </ItemGroup>

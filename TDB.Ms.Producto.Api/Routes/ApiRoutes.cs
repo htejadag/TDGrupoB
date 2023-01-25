@@ -18,5 +18,18 @@
             public const string Delete = Base + "/producto/delete";
 
         }
+
+        public static class RouteCategoria
+        {
+            // Read
+            public const string GetAll = Base + "/categoria/all";
+            public const string GetById = Base + "/categoria/{id}";
+
+            // Write
+            public const string Create = Base + "/categoria/create";
+            public const string Update = Base + "/categoria/update";
+            public const string Delete = Base + "/categoria/delete";
+
+        }
     }
 }

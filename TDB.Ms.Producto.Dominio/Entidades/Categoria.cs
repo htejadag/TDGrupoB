@@ -9,6 +9,7 @@ namespace TDB.Ms.Producto.Dominio.Entidades
     [BsonIgnoreExtraElements]
     public class Categoria : EntityToLower<ObjectId>
     {
+        public int idCategoria { get; set; }
         public string nombre { get; set; }
     }
 }
