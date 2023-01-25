@@ -5,16 +5,10 @@ using Release.MongoDB.Repository.Model;
 
 namespace TDB.Ms.Producto.Dominio.Entidades
 {
-    [CollectionProperty("producto")]
+    [CollectionProperty("categoria")]
     [BsonIgnoreExtraElements]
-    public class Producto : EntityToLower<ObjectId>
-    {        
-        public int idProducto { get; set; }
-
+    public class Categoria : EntityToLower<ObjectId>
+    {
         public string nombre { get; set; }
-
-        public decimal precio { get; set; }
-
-        public int cantidad { get; set; }
     }
 }
