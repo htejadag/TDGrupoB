@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TDB.Ms.Producto.Infraestructura.DBSettings;
+using TDB.Ms.Producto.Aplicacion;
 
 namespace TDB.Ms.Producto.Api
 {
@@ -29,10 +23,11 @@ namespace TDB.Ms.Producto.Api
             services.AddControllers(); 
             //services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-            
+
             // Conexión a Base de Datos
-            services.Configure<DBSettings>(Configuration.GetSection("DBSettings"));
-            services.AddSingleton<IDBSettings>(x => x.GetRequiredService<IOptions<DBSettings>>().Value);
+            //services.Configure<DBSettings>(Configuration.GetSection("DBSettings"));
+            //services.AddSingleton<IDBSettings>(x => x.GetRequiredService<IOptions<DBSettings>>().Value);
+            services.AddAplicacion(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +47,12 @@ namespace TDB.Ms.Producto.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGet("/",
+                   async context =>
+                   {
+                       string color = env.IsDevelopment() ? "Gray" : "Green";
+                       await context.Response.WriteAsync($"<h1 style='color:{color};'>[MS.Api] Environment: <a href='/swagger'>{env.EnvironmentName}</a></h1>");
+                   });
             });
         }
     }
