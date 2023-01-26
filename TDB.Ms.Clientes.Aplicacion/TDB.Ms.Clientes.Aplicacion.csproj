@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Cliente\Read\**" />
+    <Compile Remove="Cliente\Write\**" />
+    <EmbeddedResource Remove="Cliente\Read\**" />
+    <EmbeddedResource Remove="Cliente\Write\**" />
+    <None Remove="Cliente\Read\**" />
+    <None Remove="Cliente\Write\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TDB.Ms.Clientes.Dominio\TDB.Ms.Clientes.Dominio.csproj" />
+    <ProjectReference Include="..\TDB.Ms.Clientes.Infraestructura\TDB.Ms.Clientes.Infraestructura.csproj" />
+  </ItemGroup>
+
+</Project>
