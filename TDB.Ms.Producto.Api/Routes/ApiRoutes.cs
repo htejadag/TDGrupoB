@@ -16,6 +16,7 @@
             public const string Create = Base + "/producto/create";
             public const string Update = Base + "/producto/update";
             public const string Delete = Base + "/producto/delete";
+            public const string UpdateStock = Base + "/producto/updateStock";
 
         }
 
@@ -29,7 +30,6 @@
             public const string Create = Base + "/categoria/create";
             public const string Update = Base + "/categoria/update";
             public const string Delete = Base + "/categoria/delete";
-
         }
     }
 }

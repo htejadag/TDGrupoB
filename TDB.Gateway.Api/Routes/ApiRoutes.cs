@@ -17,6 +17,18 @@
             public const string Update = Base + "/producto/update";
             public const string Delete = Base + "/producto/delete";
 
+            public const string RegistrarPedido = Base + "/pedido/create";
+
+        }
+
+        public static class RoutePedido
+        {
+            // Read
+            
+
+            // Write           
+            public const string RegistrarPedido = Base + "/pedido/creates";
+
         }
     }
 }

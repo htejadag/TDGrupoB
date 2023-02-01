@@ -25,7 +25,7 @@ namespace TDB.Ms.Producto.Aplicacion.Producto
             return items;
         }
 
-        public bool Registraproducto(dominio.Producto producto)
+        public bool Registrar(dominio.Producto producto)
         {
             producto.esEliminado = false;
             producto.fechaCreacion =DateTime.Now;
@@ -38,7 +38,7 @@ namespace TDB.Ms.Producto.Aplicacion.Producto
             return true;
         }
 
-        public dominio.Producto Producto(int idProducto)
+        public dominio.Producto BuscarPorId(int idProducto)
         {
             Expression<Func<dominio.Producto, bool>> filter = s => s.esEliminado == false && s.idProducto == idProducto;
             var item = (_producto.Context().FindAsync(filter, null).Result).FirstOrDefault();
@@ -50,6 +50,19 @@ namespace TDB.Ms.Producto.Aplicacion.Producto
             Expression<Func<dominio.Producto, bool>> filter = s => s.esEliminado == false && s.idProducto == idProducto;
             var item = (_producto.Context().FindOneAndDelete(filter, null));
             
+        }
+
+        public bool Modificar(dominio.Producto producto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ActualizarStock(int idProducto, int cantidad)
+        {
+            dominio.Producto producto = BuscarPorId(idProducto);
+            producto.cantidad += cantidad;
+            producto.fechaModificacion = DateTime.Now;
+            var p = _productoR.UpdateOne(producto.id, producto);            
         }
     }
 }

@@ -1,0 +1,268 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TDB.Ms.Cliente.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/cliente/all": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "operationId": "all",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cliente"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cliente"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cliente"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cliente/{id}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "operationId": "cliente",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cliente/create": {
+      "post": {
+        "tags": [
+          "Cliente"
+        ],
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cliente"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cliente"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cliente"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cliente/delete": {
+      "delete": {
+        "tags": [
+          "Cliente"
+        ],
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cliente": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "esActivo": {
+            "type": "boolean"
+          },
+          "fechaModificacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "esEliminado": {
+            "type": "boolean"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombres": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellidoPaterno": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellidoMaterno": {
+            "type": "string",
+            "nullable": true
+          },
+          "celular": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ObjectId": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "readOnly": true,
+            "format": "int32"
+          },
+          "machine": {
+            "type": "integer",
+            "readOnly": true,
+            "format": "int32",
+            "deprecated": true
+          },
+          "pid": {
+            "type": "integer",
+            "readOnly": true,
+            "format": "int32",
+            "deprecated": true
+          },
+          "increment": {
+            "type": "integer",
+            "readOnly": true,
+            "format": "int32",
+            "deprecated": true
+          },
+          "creationTime": {
+            "type": "string",
+            "readOnly": true,
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

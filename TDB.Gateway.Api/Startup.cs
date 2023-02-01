@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using TDB.Gateway.Aplicacion;
 
 namespace TDB.Gateway.Api
@@ -20,6 +21,8 @@ namespace TDB.Gateway.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.InstallServicesAssembly(typeof(Startup).Assembly, Configuration, Environment);
+
             services.AddControllers(); 
             //services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();

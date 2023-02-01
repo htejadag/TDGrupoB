@@ -28,7 +28,7 @@ namespace TDB.Ms.Producto.Api.Controllers
         [HttpGet(RouteProducto.GetById)]
         public dominio.Producto BuscarProducto(int id)
         {           
-            var objProducto = _service.Producto(id);
+            var objProducto = _service.BuscarPorId(id);
 
             return objProducto;
         }
@@ -36,8 +36,14 @@ namespace TDB.Ms.Producto.Api.Controllers
         [HttpPost(RouteProducto.Create)]
         public ActionResult<dominio.Producto> CrearProducto([FromBody] dominio.Producto producto)
         {
-            _service.Registraproducto(producto);
+            _service.Registrar(producto);
+            return Ok();
+        }
 
+        [HttpPost(RouteProducto.UpdateStock)]
+        public ActionResult<dominio.Producto> UpdateStock([FromBody] dominio.Producto producto)
+        {
+            _service.ActualizarStock(producto.idProducto, producto.cantidad);
             return Ok();
         }
 
